@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>Популярные рецепты</h2>
+    <h2 class="title">Популярные рецепты</h2>
     <ul>
     {% for recipe in recipes %}
         <li><a href="/recipes/{{ recipe.id }}/">{{ recipe.title }}</a></li>
     {% endfor %}
     </ul>
 {% endblock %}
+<link rel="stylesheet" href="static/css/style1.css">
+<script src="static/js/script1.js"></script>

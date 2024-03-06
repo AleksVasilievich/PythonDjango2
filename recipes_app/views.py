@@ -31,6 +31,40 @@ def add_edit_recipe(request, recipe_id=None):
             recipe = form.save(commit=False)
             recipe.author = request.user  # Устанавливаем автора рецепта
             recipe.save()
+            print(recipe.id)
+            return redirect('add_edit_recipe', recipe_id=recipe.id)
+    else:
+        form = RecipeForm(instance=recipe)
+
+    return render(request, 'add_edit_recipe.html', {'form': form, 'recipe': recipe})
+
+@login_required
+def add_recipe(request):
+    if request.method == 'POST':
+        form = RecipeForm(request.POST)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.author = request.user
+            recipe.save()
+            print(recipe.id)
+            return redirect('add_edit_recipe', recipe_id=recipe.id)
+    else:
+        form = RecipeForm()
+
+    return render(request, 'add_edit_recipe.html', {'form': form, 'recipe': None})
+
+
+@login_required
+def edit_recipe(request, recipe_id):
+    recipe = Recipe.objects.get(id=recipe_id)
+
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, instance=recipe)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.author = request.user
+            recipe.save()
+            print(recipe.id)
             return redirect('add_edit_recipe', recipe_id=recipe.id)
     else:
         form = RecipeForm(instance=recipe)

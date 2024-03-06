@@ -15,6 +15,6 @@ class Recipe(models.Model):
     description = models.TextField()
     preparation_steps = models.TextField()
     preparation_time = models.IntegerField()
-    image = models.ImageField(upload_to='images', blank=True, null=True)
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     categories = models.ManyToManyField(Category, related_name='recipes')

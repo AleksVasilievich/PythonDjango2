@@ -13,6 +13,7 @@
     <nav>
         <a href="/">Главная</a>
         <a href="/recipes/add/">Добавить рецепт</a>
+        <a href="/recipes/edit/{{ recipe_id }}">Редактировать рецепт</a>
         {% if user.is_authenticated %}
         <a href="{% url 'logout' %}">Выйти</a>
         {% else %}

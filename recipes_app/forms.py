@@ -9,6 +9,9 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = ['title', 'description', 'preparation_steps', 'preparation_time', 'image', 'categories']
+        widgets = {
+            'image': forms.FileInput(attrs={'accept': 'image/*'})
+        }
 
 
 

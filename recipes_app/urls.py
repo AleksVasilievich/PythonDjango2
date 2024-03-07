@@ -11,7 +11,7 @@ urlpatterns = [
     path('recipes/add/', views.add_edit_recipe, name='add_edit_recipe'),
     path('recipes/add/<int:recipe_id>/', views.recipe_detail, name='recipe_detail'),
     # path('recipes/add/', views.add_recipe, name='add_edit_recipe'),
-    # path('recipes/adit/', views.edit_recipe, name='add_edit_recipe'),
+    path('recipes/<int:recipe_id>/adit/', views.add_edit_recipe, name='add_edit_recipe'),
     path('accounts/registration/', views.signup, name='signup'),
     path('accounts/login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('accounts/logout/', views.logout_view, name='logout'),

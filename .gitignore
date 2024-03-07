@@ -1,4 +1,4 @@
-/static/
+/recipes_app/static/
 /log/
 /myproject/__pycache__/
 /recipes_app/__pycache__/
@@ -10,8 +10,8 @@ __pycache__/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-static
-/static/
+recipes_app/static
+/recipes_app/static/
 *.sqlite3
 
 .idea

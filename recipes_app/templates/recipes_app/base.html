@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Рецепты</title>
-    <link rel="stylesheet" href="{% static 'recipes_app/css/style_base.css' %}">
+    <link rel="stylesheet" href="{% static 'recipes_app/css/style4.css' %}">
 </head>
 <body>
 <header>
-    <h1 style="color: mediumseagreen" id="top" class="title">Сайт рецептов</h1>
+<!--    <h1 style="color: #db9b9b" id="top" class="title">Сайт рецептов</h1>-->
+    <h1 id="top" class="title">Сайт рецептов</h1>
     <nav>
         <a href="/">Главная</a>
         <a href="/recipes/add/">Добавить/Редактировать рецепт</a>
@@ -25,6 +26,11 @@
 <main>
     {% block content %}{% endblock %}
 </main>
-<a href="#top">Вверх</a>
+
+<footer class="footer">
+    <a class="footer" style="">© 2021 <NAME>Все права зашищены</a>
+    <a href="#top">Вверх</a>
+</footer>
+
 </body>
 </html>

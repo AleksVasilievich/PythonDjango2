@@ -29,21 +29,17 @@
 - ]
 ##### Добавим модели 
 - myproject/recipes_app/models.py
+##### Добавим представления 
+- myproject/recipes_app/views.py
 
 ##### Добавим шаблоны в директорию (templates)
 - myproject/recipes_app/templates
 - base.html
-
 - home.html
-
 - recipe.html
-
 - registration.html
-
 - login.html
-
 - logout.html
-
 - add_edit_recipe.html
 ##### Формы (forms.py)
 - myproject/recipes_app/forms.py
@@ -58,6 +54,11 @@
 ##### Добавим стили
 -  static/recipes_app/ccs/style.css
 - static/recipes_app/js/script.js
+
+##### Настройка подключения к базе данных
+- Откроем страницу Базы данных на сайте pythonanywhere. 
+- Для бесплатного использования нам доступна БД MySQL. Придумаем пароль доступа к базе данных.
+- Его стоит запомнить, чтобы чуть позже подключить Django к БД. 
 
 #### Подготовка к развёртыванию проекта на сервере
 - на пример на сервере от pythonanywhere.com
@@ -112,3 +113,15 @@ utf8_general_ci;
 - git remote add origin https://github.com/AleksVasilievich/PythonDjango2.git
 - git branch -M main
 - git push -u origin main
+##### Переходим на сайт pythonanywhere, открываем консоль и клонируем репозиторий
+- git clone https://github.com/myusername/myproject.git
+##### Настройка проекта на сервере
+- После завершения клонирования остаёмся в консоли, запускаем команду на создание виртуального окружения:
+- mkvirtualenv --python=/usr/bin/python3.10 virtualenv
+##### Активация виртуального окружения происходит автоматически после создания. 
+##### Не закрывая консоль устанавливаем необходимые пакеты:
+- cd myproject
+- pip install -r requirements.txt
+##### Создаём веб-приложение
+
+

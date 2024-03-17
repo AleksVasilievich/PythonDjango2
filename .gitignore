@@ -14,12 +14,6 @@ recipes_app/static
 *.sqlite3
 /media/
 /static/
-.gitignore
-
-q
-
-
-
 
 
 .idea

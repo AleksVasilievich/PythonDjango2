@@ -8,7 +8,7 @@
 </div>
 <h3>Время приготовления: {{ recipe.preparation_time }} минут</h3>
 <h3>Автор: {{ recipe.author }}</h3>
-<img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" style="max-width: 100%; height: auto; width: auto">
+<img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" style="max-width: 50%; height: auto; width: auto">
 <ul>
     {% for category in recipe.categories.all %}
     <li class="recipe">{{ category.name }}</li>

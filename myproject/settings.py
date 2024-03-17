@@ -24,16 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-awzs4e&vjcmce!$$3bgnzndi552_airnk#&09psv@ot@u#!3hm"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     # "localhost",
     "127.0.0.1",
 ]
 
-# INTERNAL_IPS = [
-#     '127.0.0.1',
-# ]
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -88,9 +88,17 @@ WSGI_APPLICATION = "myproject.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sprig$default',
+        'USER': 'sprig',
+        'PASSWORD': os.getenv("MYSQL_PASSWORD"),
+        'HOST': 'sprig.mysql.pythonanywhere-services.com',
+        'OPTIONS': {
+            'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset': 'utf8mb4',
+        },
+
     }
 }
 
@@ -130,7 +138,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # без этой записи не отображается фото на сайте !!!
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = []  # список нестандартных путей для статической страницы
 # STATIC_ROOT = BASE_DIR / 'static/'
 
